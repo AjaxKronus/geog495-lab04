@@ -92,11 +92,12 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/light-v10',
             zoom: 6.5,
-            center: [-120.5, 47.5]  // Centered on Washington State
+            center: [-120.5, 47.5]
         });
 
         async function geojsonFetch() {
-            let response = await fetch('assets/wa-covid-data-102521.geojson');
+            // CHANGED: Removed 'assets/' from path
+            let response = await fetch('wa-covid-data-102521.geojson');
             let covidData = await response.json();
 
             map.on('load', function loadingData() {

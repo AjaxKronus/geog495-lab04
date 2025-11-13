@@ -86,6 +86,7 @@
     </div>
     <div class='map-overlay' id='legend'></div>
     <script>
+        // YOUR NEW TOKEN
         mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hcnR5YWNoYXViZSIsImEiOiJjbWhkeWRlczYwOGQxMnZwdjJyYWwydmhoIn0.gWwGNyVcD1xoO5v2UXrJ0Q';
 
         const map = new mapboxgl.Map({
@@ -96,8 +97,7 @@
         });
 
         async function geojsonFetch() {
-            // CHANGED: Removed 'assets/' from path
-            let response = await fetch('wa-covid-data-102521.geojson');
+            let response = await fetch('assets/wa-covid-data-102521.geojson');
             let covidData = await response.json();
 
             map.on('load', function loadingData() {

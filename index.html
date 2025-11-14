@@ -29,6 +29,7 @@
             left: 0;
             right: 0;
             width: 100%;
+            height: 100%;
         }
 
         .map-overlay {
@@ -96,8 +97,8 @@
         });
 
         async function geojsonFetch() {
-            // CHANGED: Removed 'assets/' from path
-            let response = await fetch('wa-covid-data-102521.geojson');
+            // FIXED: Added back 'assets/' path
+            let response = await fetch('assets/wa-covid-data-102521.geojson');
             let covidData = await response.json();
 
             map.on('load', function loadingData() {
